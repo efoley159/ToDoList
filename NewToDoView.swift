@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewToDoView: View {
+    @State private var showNewTask = false
     var body: some View {
         VStack {
             Text("Task Title")
@@ -17,7 +18,7 @@ struct NewToDoView: View {
                 Text("Is it important?")
             }
             Button {
-
+                showNewTask = true
             } label: {
                 Text("Save")
                     
@@ -25,6 +26,9 @@ struct NewToDoView: View {
 
         }
         .padding()
+        if showNewTask {
+            NewToDoView()
+        }
     }
 }
 
